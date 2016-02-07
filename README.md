@@ -1,22 +1,12 @@
-# Slim Bookshelf
+# Postrail website
 
-This is a simple Slim 3 application that manages a list of books
-
-
-## Vagrant
-
-To use the Vagrant VM, install Vagrant, Virtual Box & the VirtualBox Extension
-Pack. If you install the `vagrant-hostsupdater` Vagrant plugin, then your hosts
-file will be automatically updated too.
-
-1. `vagrant up`
-2. navigate to http://slim-bookshelf.localhost
+This is the [Postrail's website](http://www.postrail.org) repository.
+**This site is still in heavy development!**
 
 
-If you don't use the hostsupdater plugin, then the /etc/hosts record you need
-is:
+## Credits
 
-    192.168.98.12 slim-bookshelf.localhost phpmyadmin.slim-bookshelf.localhost mailcatcher.slim-bookshelf.localhost
+The code is based on [Slim Bookshelf](https://github.com/akrabat/slim-bookshelf), a Slim 3 microframework application example written by [Rob Allen](https://github.com/akrabat).
 
 
 
