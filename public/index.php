@@ -5,11 +5,7 @@ chdir(dirname(__DIR__));
 require 'vendor/autoload.php';
 session_start();
 
-if (file_exists('app/settings.php')) {
-    $settings = require 'app/settings.php';
-} else {
-    $settings = require 'app/settings.php.dist';
-}
+$settings = require 'config/settings.php';
 
 // Instantiate Slim
 $app = new \Slim\App($settings);
