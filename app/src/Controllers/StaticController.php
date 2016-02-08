@@ -4,9 +4,8 @@ namespace App\Controllers;
 use Slim\Views\Twig;
 use Slim\Router;
 use Slim\Flash\Messages as FlashMessages;
-use App\Runner;
 
-final class RunnerController
+final class StaticController
 {
     private $view;
     private $router;
@@ -19,12 +18,14 @@ final class RunnerController
         $this->flash = $flash;
     }
 
-    public function index($request, $response)
+    public function home($request, $response)
     {
-        return $this->view->render($response, 'runner/index.twig', [
-            'runners' => Runner::all()
-        ]);
+        return $this->view->render($response, 'static/home.twig');
     }
 
+    public function rules($request, $response)
+    {
+        return $this->view->render($response, 'static/rules.twig');
+    }
 
 }

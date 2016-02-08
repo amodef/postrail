@@ -37,13 +37,9 @@ $container['flash'] = function ($c) {
     return new \Slim\Flash\Messages;
 };
 
-// controller
-$container['App\Controllers\AuthorController'] = function ($c) {
-    return new App\Controllers\AuthorController($c['view'], $c['router'], $c['flash']);
-};
-
-$container['App\Controllers\BookController'] = function ($c) {
-    return new App\Controllers\BookController($c['view'], $c['router'], $c['flash']);
+// Container and route binder
+$container['App\Controllers\StaticController'] = function ($c) {
+    return new App\Controllers\StaticController($c['view'], $c['router'], $c['flash']);
 };
 
 $container['App\Controllers\RunnerController'] = function ($c) {
