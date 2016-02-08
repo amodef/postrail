@@ -16,7 +16,7 @@ $container['view'] = function ($c) {
     // Add extensions
     $view->addExtension(new Slim\Views\TwigExtension($c['router'], $c['request']->getUri()));
     $view->addExtension(new Twig_Extension_Debug());
-    $view->addExtension(new Bookshelf\TwigExtension($c['flash']));
+    $view->addExtension(new App\Controllers\TwigExtension($c['flash']));
 
     return $view;
 };
@@ -37,10 +37,14 @@ $container['flash'] = function ($c) {
 };
 
 // controller
-$container['Bookshelf\AuthorController'] = function ($c) {
-    return new Bookshelf\AuthorController($c['view'], $c['router'], $c['flash']);
+$container['App\Controllers\AuthorController'] = function ($c) {
+    return new App\Controllers\AuthorController($c['view'], $c['router'], $c['flash']);
 };
 
-$container['Bookshelf\BookController'] = function ($c) {
-    return new Bookshelf\BookController($c['view'], $c['router'], $c['flash']);
+$container['App\Controllers\BookController'] = function ($c) {
+    return new App\Controllers\BookController($c['view'], $c['router'], $c['flash']);
+};
+
+$container['App\Controllers\RunnerController'] = function ($c) {
+    return new App\Controllers\RunnerController($c['view'], $c['router'], $c['flash']);
 };

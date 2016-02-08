@@ -10,11 +10,11 @@ $settings = require 'config/settings.php';
 // Instantiate Slim
 $app = new \Slim\App($settings);
 
-require 'app/src/dependencies.php';
-require 'app/src/middleware.php';
+require 'app/dependencies.php';
+require 'app/middlewares.php';
 
 // Register the routes
-require 'app/src/routes.php';
+require 'app/routes.php';
 
 // Register the database connection with Eloquent
 $capsule = $app->getContainer()->get('capsule');

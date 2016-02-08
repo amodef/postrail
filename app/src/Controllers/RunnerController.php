@@ -1,14 +1,12 @@
 <?php
-
-namespace Bookshelf;
+namespace App\Controllers;
 
 use Slim\Views\Twig;
 use Slim\Router;
 use Slim\Flash\Messages as FlashMessages;
-use Bookshelf\Author;
-use Bookshelf\Book;
+use App\Runner;
 
-final class BookController
+final class RunnerController
 {
     private $view;
     private $router;
@@ -21,10 +19,11 @@ final class BookController
         $this->flash = $flash;
     }
 
-    public function listBooks($request, $response, $params)
+    public function index($request, $response)
     {
-        return $this->view->render($response, 'bookshelf/book/list.twig', [
-            'books' => Book::all(),
+        return $this->view->render($response, 'runner/index.twig', [
+            'runners' => Runner::all()
         ]);
     }
+
 }

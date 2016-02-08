@@ -1,5 +1,5 @@
 <?php
-namespace Bookshelf;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -7,6 +7,6 @@ final class Book extends Model
 {
     public function author()
     {
-        return $this->belongsTo('Bookshelf\Author');
+        return $this->belongsTo('App\Author');
     }
 }

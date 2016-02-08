@@ -1,11 +1,10 @@
 <?php
-
-namespace Bookshelf;
+namespace App\Controllers;
 
 use Slim\Views\Twig;
 use Slim\Router;
 use Slim\Flash\Messages as FlashMessages;
-use Bookshelf\Author;
+use App\Author;
 
 final class AuthorController
 {
@@ -22,7 +21,7 @@ final class AuthorController
 
     public function listAuthors($request, $response)
     {
-        return $this->view->render($response, 'bookshelf/author/list.twig', [
+        return $this->view->render($response, 'author/list.twig', [
             'authors' => Author::all()
         ]);
     }
@@ -37,7 +36,7 @@ final class AuthorController
             }
             $books = $author->books;
         }
-        return $this->view->render($response, 'bookshelf/author/books.twig', [
+        return $this->view->render($response, 'author/books.twig', [
             'author' => $author,
             'books' => $books,
         ]);
@@ -71,7 +70,7 @@ final class AuthorController
             }
         }
 
-        return $this->view->render($response, 'bookshelf/author/edit.twig', [
+        return $this->view->render($response, 'author/edit.twig', [
             'author' => $author,
             'errors' => $errors,
             'csrf' => [

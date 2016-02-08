@@ -13,7 +13,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Bookshelf\\": "app/src/Bookshelf"
+            "App\\": "app/src/"
         }
     },
     "require": {

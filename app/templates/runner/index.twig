@@ -1,0 +1,15 @@
+{% extends 'layout.twig' %}
+
+{% set title = 'All runners' %}
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<h1>{{title}}</h1>
+
+<ul>
+{% for runner in runners %}
+    <li>{{ runner.first_name }} {{ runner.last_name }} is on the {{ runner.race }} race.</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

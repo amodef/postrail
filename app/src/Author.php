@@ -1,5 +1,5 @@
 <?php
-namespace Bookshelf;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Valitron\Validator;
@@ -20,7 +20,7 @@ final class Author extends Model
 
     public function books()
     {
-        return $this->hasMany('Bookshelf\Book');
+        return $this->hasMany('App\Book');
     }
 
     /**
