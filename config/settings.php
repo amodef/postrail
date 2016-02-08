@@ -1,6 +1,6 @@
 <?php
 
-require 'env.php';
+require __DIR__ . '/../env.php';
 
 return [
     'settings' => [
@@ -16,16 +16,16 @@ return [
             'prefix'    => '',
         ],
         'view' => [
-            'template_path' => 'app/templates',
+            'template_path' => __DIR__ . '/../app/templates',
             'twig' => [
-                'cache' => 'cache/twig',
+                'cache' => __DIR__ . '/../cache/twig',
                 'debug' => true,
             ],
         ],
     ],
     'paths' => [
         // Phinx migrations path
-        'migrations' => './database/migrations'
+        'migrations' => __DIR__ . '/../database/migrations'
     ],
     'environments' => [
         // Phinx configuration
