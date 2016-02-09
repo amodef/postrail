@@ -1,23 +1,11 @@
 <?php
 namespace App\Controllers;
 
-use Slim\Views\Twig;
-use Slim\Router;
-use Slim\Flash\Messages as FlashMessages;
+use App\Controllers\Controller;
 use App\Runner;
 
-final class RunnerController
+final class RunnerController extends Controller
 {
-    private $view;
-    private $router;
-    private $flash;
-
-    public function __construct(Twig $view, Router $router, FlashMessages $flash)
-    {
-        $this->view = $view;
-        $this->router = $router;
-        $this->flash = $flash;
-    }
 
     public function index($request, $response)
     {
@@ -26,5 +14,20 @@ final class RunnerController
         ]);
     }
 
+    public function create($request, $response)
+    {
+        return $this->view->render($response, 'runner/create.twig');
+    }
+
+    public function store($request, $response)
+    {
+        $data = $request->getParsedBody();
+        $runner = new Runner($data);
+
+        if ($runner->save()) {
+            return $response->withRedirect('/runner');
+        }
+        return $response->withRedirect('/runner/create');
+    }
 
 }

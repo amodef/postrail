@@ -9,3 +9,5 @@ $app->get('/rules', 'App\Controllers\StaticController:rules')->setName('rules');
 
 // runner routes
 $app->get('/runner', 'App\Controllers\RunnerController:index')->setName('runner.index');
+$app->get('/runner/create', 'App\Controllers\RunnerController:create')->setName('runner.create');
+$app->post('/runner', 'App\Controllers\RunnerController:store')->setName('runner.store');

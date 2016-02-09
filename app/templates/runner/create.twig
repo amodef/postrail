@@ -1,0 +1,59 @@
+{% extends 'layout.twig' %}
+
+{% set title = 'Register' %}
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+
+<div class="row"> 
+    <div class="col-md-6">
+
+        <h1>{{title}}</h1>
+        <br>
+
+        <form method="POST" action="{{ path_for('runner.store') }}" class="form-horizontal">
+
+            <!-- add race selector here -->
+            <div class="form-group">                
+                <div class="col-sm-12" id="race" name="race">
+                    <label for="race">I want to run</label>
+                    <select class="form-control" id="race" name="race">
+                        <option>15 km</option>
+                        <option>27 km</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <label for="first_name">My firstname and lastname are</label>
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Jean" required>
+                </div>
+                <div class="col-sm-6">    
+                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Dupont" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <label for="email">My email address is</label>
+                </div>
+                <div class="col-sm-12"> 
+                    <input type="email" class="form-control" id="email" name="email" placeholder="jean.dupont@yourdomain.be" required>
+                </div>
+            </div>
+
+            <input type="hidden" name="csrf_name" value="{{ csrf.name }}">
+            <input type="hidden" name="csrf_value" value="{{ csrf.value }}">
+
+            <br>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a class="btn btn-default" href="{{ path_for('runner.index') }}">Cancel</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
