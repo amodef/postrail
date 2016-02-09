@@ -8,6 +8,8 @@
 <div class="row"> 
     <div class="col-md-6">
 
+        {% include 'message.twig' %}
+
         <h1>{{title}}</h1>
         <br>
 
@@ -45,8 +47,8 @@
                 </div>
             </div>
 
-            <input type="hidden" name="csrf_name" value="{{ csrf.name }}">
-            <input type="hidden" name="csrf_value" value="{{ csrf.value }}">
+            <input type="hidden" name="csrf_name" value="{{ csrf['name'] }}">
+            <input type="hidden" name="csrf_value" value="{{ csrf['value'] }}">
 
             <br>
 

@@ -33,7 +33,7 @@ $container['csrf'] = function ($c) {
 };
 
 // Flash messages
-$container['flash'] = function ($c) {
+$container['flash'] = function () {
     return new \Slim\Flash\Messages;
 };
 
