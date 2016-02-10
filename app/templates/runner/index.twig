@@ -21,10 +21,10 @@
     </thead>
     <tbody>
         {% for runner in runners %}
-        <tr>
+        <tr>                    
             <td>{{ runner['id'] }}</td>
-            <td>{{ runner['first_name'] }} {{ runner['last_name'] }}</td>
-            <td>{{ runner['race'] }}</td>
+            <td><a href="/runner/{{ runner['id'] }}">{{ runner['first_name'] }} {{ runner['last_name'] }}</a></td>
+            <td>{{ runner['race'] }}</td>        
         </tr>
         {% endfor %}
     </tbody>

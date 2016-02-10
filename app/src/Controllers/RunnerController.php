@@ -50,7 +50,7 @@ final class RunnerController extends Controller
     {
         $runner_id = $args['runner'];
 
-        if (false) {
+        if (Runner::destroy($runner_id)) {
             $this->flash->addMessage('success', 'User removed.');
             return $resp->withRedirect('/runner');
         }
