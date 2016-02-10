@@ -1,0 +1,19 @@
+{% extends 'layout.twig' %}
+
+{% set title %}{{ runner['first_name'] }} {{ runner['last_name'] }}{% endset %}
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+
+{% include 'message.twig' %}
+
+<h1>{{title}}</h1>
+
+<ul>
+    <li>Race: {{ runner['race'] }}</li>
+    <li>Number of meals: </li>
+    <li>City: </li>
+    <li>Country: </li>
+</ul>
+
+{% endblock %}

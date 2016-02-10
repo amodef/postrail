@@ -1,8 +1,7 @@
 <?php
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-use Valitron\Validator;
+use App\Model;
 
 final class Runner extends Model
 {
@@ -17,5 +16,12 @@ final class Runner extends Model
      * @var array
      */
     protected $fillable = ['race', 'first_name', 'last_name', 'email', 'paid'];
+
+    public $rules = [
+        'required' => [
+            ['first_name'],
+            ['last_name']
+        ]
+    ];
 
 }

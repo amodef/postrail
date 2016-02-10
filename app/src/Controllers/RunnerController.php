@@ -7,37 +7,56 @@ use App\Runner;
 final class RunnerController extends Controller
 {
 
-    public function index($request, $response)
+    public function index($ques, $resp)
     {
-        return $this->view->render($response, 'runner/index.twig', [
+        return $this->view->render($resp, 'runner/index.twig', [
             'runners' => Runner::all()
         ]);
     }
 
-    public function create($request, $response)
+    public function create($ques, $resp)
     {
-        return $this->view->render($response, 'runner/create.twig');
+        return $this->view->render($resp, 'runner/create.twig');
     }
 
-    public function store($request, $response)
-    {
-        /*        
-        if ($request->getAttribute('csrf_status') === false) {
-            $this->flash->addMessage('error', 'We got a CSRF failure!');                
-            return $response->withRedirect('/runner/create');
-        }
-         */
-        
-        $data = $request->getParsedBody();
-        $runner = new Runner($data);
+    public function store($ques, $resp)
+    {        
+        $data = $ques->getParsedBody();
+        $runner = new Runner();
 
-        if ($runner->save()) {
-            $this->flash->addMessage('success', 'Welcome and keep running!');
-            return $response->withRedirect('/runner');
+        $runner->error = 'Please fill in all the required fields.';
+        if ($runner->validate($data)) {
+            if ($runner->create($data)) {
+                $this->flash->addMessage('success', 'Welcome and keep running!');
+                return $resp->withRedirect('/runner');
+            }
+            $runner->error = 'We were unable to store your datas.';
         }
-        
-        $this->flash->addMessage('error', 'We got a problem with your request...');
-        return $response->withRedirect('/runner/create');
+
+        $this->flash->addMessage('error', $runner->error);
+        return $resp->withRedirect('/runner/create');
+    }
+
+    public function show($ques, $resp, $args)
+    {
+        $runner_id = $args['runner'];
+
+        return $this->view->render($resp, 'runner/show.twig', [
+            'runner' => Runner::find($runner_id)
+        ]);
+    }
+
+    public function delete($ques, $resp, $args)
+    {
+        $runner_id = $args['runner'];
+
+        if (false) {
+            $this->flash->addMessage('success', 'User removed.');
+            return $resp->withRedirect('/runner');
+        }
+
+        $this->flash->addMessage('error', 'We were unable to delete this entry.');
+        return $resp->withRedirect('/runner/' . $runner_id);
     }
 
 }
