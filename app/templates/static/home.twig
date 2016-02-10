@@ -4,8 +4,12 @@
 {% block title %}{{title}}{% endblock %}
 
 {% block content %}
-<h1>{{title}}</h1>
-
-<p>Here is the homepage of our website.</p>
+<div class="jumbotron">
+    <h1>Postrail 2016</h1>
+    <p>Saturday 23 july on the afternoon and a lot later!</p>
+    <p>
+      <a class="btn btn-lg btn-primary" href="{{ path_for('runner.create')}}" role="button">S'inscrire <span class="glyphicon glyphicon-chevron-right"></a>
+    </p>
+</div>
 
 {% endblock %}

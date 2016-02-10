@@ -1,12 +1,4 @@
 body {
-  padding-top: 70px;
-}
-
-
-footer {
-    margin-top: 20px;
-    border-top: 1px solid #ccc;
-    padding: 5px 0;
-    color: #666;
-    font-size: 0.85em;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
