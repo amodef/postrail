@@ -53,7 +53,7 @@ final class AuthorController
         $errors = null;
         if ($request->isPost()) {
             if ($request->getAttribute('csrf_status') === false) {
-                $errors['form'] = 'CSRF faiure';
+                $errors['form'] = 'CSRF failure';
             } else {
                 $data = $request->getParsedBody();
                 $validator = $author->getValidator($data);

@@ -39,9 +39,7 @@ $container['flash'] = function () {
 
 // SwiftMailer
 $container['mailer'] = function ($c) {
-    $transport = \Swift_SmtpTransport::newInstance()
-        ->setHost($c['settings']['mail']['host'])
-        ->setPort($c['settings']['mail']['port'])
+    $transport = \Swift_SmtpTransport::newInstance($c['settings']['mail']['host'], $c['settings']['mail']['port'])
         ->setEncryption($c['settings']['mail']['encryption'])
         ->setUsername($c['settings']['mail']['username'])
         ->setPassword($c['settings']['mail']['password']);
@@ -55,5 +53,6 @@ $container['App\Controllers\StaticController'] = function ($c) {
 };
 
 $container['App\Controllers\RunnerController'] = function ($c) {
-    return new App\Controllers\RunnerController($c['view'], $c['router'], $c['flash']);
+
+    return new App\Controllers\RunnerController($c['view'], $c['router'], $c['flash'], $c['mailer']);
 };
