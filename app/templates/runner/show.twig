@@ -7,49 +7,49 @@
 
 {% include 'message.twig' %}
 
-<h1>{{title}}</h1>
-
-<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
-    <span class="glyphicon glyphicon-pencil">
-</button>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
-    <span class="glyphicon glyphicon-remove">
-</button>
+<div class="row text-center">
+    <div class="col-md-4">
+        <h3 class="text-uppercase">
+            {{title}} <span class="label label-info">{{ runner['race'] }}</span>
+        </h3>
+        <h3><small>
+            {{ runner['city'] }}, {{ runner['country'] }}
+            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            {% if runner['gender'] %}Male{% else %}Female{% endif %}, {{ runner['age'] }}
+            {% if runner['team'] %}
+                <br>{{ runner['team'] }}
+            {% endif %}
+        </small></h3>
+        <hr>
+        <!-- Edit -->
+        <a href="">edit</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <!-- Delete -->
+        <a href="#" data-toggle="modal" data-target="#myModal">delete</a>
+    </div>
+</div>
 
 <!-- Modal -->
-<p>
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">Warning!</h4>
-                </div>
-                <div class="modal-body">
-                    You're about to delete a runner! Are you sure that you wanna do this?
-                </div>
-                <div class="modal-footer">
-                    <form action="/runner/{{ runner['id'] }}" method="post">
-                        <input type="hidden" name="_METHOD" value="DELETE"/>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Delete</button>
-                    </form>
-                </div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel"><b>Warning!</b></h4>
+            </div>
+            <div class="modal-body">
+                You're about to remove <b>{{ runner['first_name'] }} {{ runner['last_name'] }}</b> from the competition. Are you sure you wanna do this?
+            </div>
+            <div class="modal-footer">
+                <form action="/runner/{{ runner['id'] }}" method="post">
+                    <input type="hidden" name="_METHOD" value="DELETE"/>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
             </div>
         </div>
     </div>
-</p>
-
-<p>    
-    <ul>
-        <li>Race: {{ runner['race'] }}</li>
-        <li>Number of meals: </li>
-        <li>City: </li>
-        <li>Country: </li>
-    </ul>
-</p>
+</div>
 
 {% endblock %}

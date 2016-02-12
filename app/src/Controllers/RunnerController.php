@@ -3,6 +3,7 @@ namespace App\Controllers;
 
 use App\Controllers\Controller;
 use App\Runner;
+use Carbon\Carbon;
 
 final class RunnerController extends Controller
 {
@@ -22,6 +23,8 @@ final class RunnerController extends Controller
     public function store($ques, $resp)
     {        
         $data = $ques->getParsedBody();
+        $data['birthday'] = $data['year'] . '-' . $data['month'] . '-' . $data['day'];
+
         $runner = new Runner();
 
         $runner->error = 'Please fill in all the required fields.';
@@ -39,10 +42,11 @@ final class RunnerController extends Controller
 
     public function show($ques, $resp, $args)
     {
-        $runner_id = $args['runner'];
+        $runner = Runner::find($args['runner']);
+        $runner['age'] = Carbon::parse($runner['birthday'])->age;
 
         return $this->view->render($resp, 'runner/show.twig', [
-            'runner' => Runner::find($runner_id)
+            'runner' => $runner
         ]);
     }
 

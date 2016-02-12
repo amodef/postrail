@@ -30,9 +30,15 @@ class CreateRunnersTable extends AbstractMigration
         // create the table
         $table = $this->table('runners');
         $table->addColumn('race', 'string', ['limit' => 10])
+              ->addColumn('meal', 'integer')
               ->addColumn('first_name', 'string', ['limit' => 255])
               ->addColumn('last_name', 'string', ['limit' => 255])
               ->addColumn('email', 'string', ['limit' => 255])
+              ->addColumn('gender', 'boolean')
+              ->addColumn('birthday', 'date')
+              ->addColumn('city', 'string', ['limit' => 255])
+              ->addColumn('country', 'string', ['limit' => 255])
+              ->addColumn('team', 'string', ['limit' => 255])
               ->addColumn('paid', 'boolean', ['default' => 0])
               ->addTimestamps()
               ->create();

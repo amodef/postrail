@@ -15,7 +15,19 @@ final class Runner extends Model
      * Fields that can be updated via update()
      * @var array
      */
-    protected $fillable = ['race', 'first_name', 'last_name', 'email', 'paid'];
+    protected $fillable = [
+        'race',
+        'meal',
+        'first_name',
+        'last_name',
+        'email',
+        'gender',
+        'birthday',
+        'city',
+        'country',
+        'team',
+        'paid'
+    ];
 
     public $rules = [
         'required' => [

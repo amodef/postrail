@@ -15,37 +15,128 @@
 
         <form method="POST" action="{{ path_for('runner.store') }}" class="form-horizontal">
 
-            <!-- add race selector here -->
+            <!-- Race -->
             <div class="form-group">                
-                <div class="col-sm-12" id="race" name="race">
-                    <label for="race">I want to run</label>
+                <div class="col-sm-12">
+                    <label for="race">The race you choose*</label>
                     <select class="form-control" id="race" name="race">
-                        <option>15 km</option>
-                        <option>27 km</option>
+                        <option value="15 km">15 km</option>
+                        <option value="27 km">27 km</option>
                     </select>
                 </div>
             </div>
 
-            <div class="form-group">
+            <!-- Meal -->
+            <div class="form-group">                
                 <div class="col-sm-12">
-                    <label for="first_name">My firstname and lastname are</label>
-                </div>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Jean">
-                </div>
-                <div class="col-sm-6">    
-                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Dupont">
+                    <label for="meal">Number of evening meals*</label>
+                    <select class="form-control" id="meal" name="meal">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
                 </div>
             </div>
 
+            <hr>
+
+            <!-- Name -->
             <div class="form-group">
                 <div class="col-sm-12">
-                    <label for="email">My email address is</label>
+                    <label for="first_name">Name*</label>
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First">
+                </div>
+                <div class="col-sm-6">    
+                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last">
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <label for="email">Your email address*</label>
                 </div>
                 <div class="col-sm-12"> 
                     <input type="text" class="form-control" id="email" name="email" placeholder="jean.dupont@yourdomain.be">
                 </div>
             </div>
+
+            <!-- Gender -->
+            <div class="form-group">                
+                <div class="col-sm-12">
+                    <label for="gender">Gender*</label>
+                    <select class="form-control" id="gender" name="gender" required>
+                        <option disabled selected>I am...</option>
+                        <option value="0">Female</option>
+                        <option value="1">Male</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Birthday -->
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <label for="first_name">Birthday*</label>
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="day" name="day" placeholder="Day">
+                </div>             
+                <div class="col-sm-5">
+                    <select class="form-control" id="month" name="month" required>
+                        <option disabled selected>Month</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                </div>
+                <div class="col-sm-4">    
+                    <input type="text" class="form-control" id="year" name="year" placeholder="Year">
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Location -->
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <label for="city">Location</label>
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="city" name="city" placeholder="City">
+                </div>
+                <div class="col-sm-6">    
+                    <input type="text" class="form-control" id="country" name="country" placeholder="Country">
+                </div>
+            </div>
+
+            <!-- Team -->
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <label for="team">Your team</label>
+                </div>
+                <div class="col-sm-12"> 
+                    <input type="text" class="form-control" id="team" name="team" placeholder="Cool Team Name">
+                </div>
+            </div>
+
+
+
+            
+
 
             <input type="hidden" name="csrf_name" value="{{ csrf['name'] }}">
             <input type="hidden" name="csrf_value" value="{{ csrf['value'] }}">
