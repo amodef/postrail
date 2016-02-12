@@ -32,6 +32,14 @@ final class RunnerController extends Controller
             if ($runner->create($data)) {
                 $this->flash->addMessage('success', 'Welcome and keep running!');
                 return $resp->withRedirect('/runner');
+
+                // $mailer = Swift_Mailer::newInstance($transport);
+                $message = Swift_Message::newInstance('You were registered!')
+                    ->setFrom(['info@postrail.org' => 'Postrail'])
+                    ->setTo(['receiver@domain.org', 'other@domain.org' => 'A name'])
+                    ->setBody('Here is the message itself');
+                
+                $this->mailer->send($message);
             }
             $runner->error = 'We were unable to store your datas.';
         }

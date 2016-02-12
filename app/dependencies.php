@@ -37,6 +37,18 @@ $container['flash'] = function () {
     return new \Slim\Flash\Messages;
 };
 
+// SwiftMailer
+$container['mailer'] = function ($c) {
+    $transport = Swift_SmtpTransport::newInstance()
+        ->setHost($c['settings']['mail']['host'])
+        ->setPort($c['settings']['mail']['port'])
+        ->setEncryption($c['settings']['mail']['encryption'])
+        ->setUsername($c['settings']['mail']['username'])
+        ->setPassword($c['settings']['mail']['password']);
+    $mailer = Swift_Mailer::newInstance($transport);
+    return $mailer;
+};
+
 // Container and route binder
 $container['App\Controllers\StaticController'] = function ($c) {
     return new App\Controllers\StaticController($c['view'], $c['router'], $c['flash']);

@@ -16,6 +16,7 @@
         <tr>
             <th>#</th>
             <th>Name</th>
+            <th>Gender</th>
             <th>Race</th>
         </tr>
     </thead>
@@ -24,6 +25,7 @@
         <tr>                    
             <td>{{ runner['id'] }}</td>
             <td><a href="/runner/{{ runner['id'] }}">{{ runner['first_name'] }} {{ runner['last_name'] }}</a></td>
+            <td>{% if runner['gender'] %}male{% else %}female{% endif %}</td>
             <td>{{ runner['race'] }}</td>        
         </tr>
         {% endfor %}

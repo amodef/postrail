@@ -22,6 +22,14 @@ return [
                 'debug' => true,
             ],
         ],
+        'mail' => [
+            'driver'     => $env['mail_driver'],
+            'host'       => $env['mail_host'],
+            'port'       => $env['mail_port'],
+            'username'   => $env['mail_username'],
+            'password'   => $env['mail_password'],
+            'encryption' => $env['mail_encryption'],
+        ],
     ],
     'paths' => [
         // Phinx migrations path
