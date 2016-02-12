@@ -39,13 +39,13 @@ $container['flash'] = function () {
 
 // SwiftMailer
 $container['mailer'] = function ($c) {
-    $transport = Swift_SmtpTransport::newInstance()
+    $transport = \Swift_SmtpTransport::newInstance()
         ->setHost($c['settings']['mail']['host'])
         ->setPort($c['settings']['mail']['port'])
         ->setEncryption($c['settings']['mail']['encryption'])
         ->setUsername($c['settings']['mail']['username'])
         ->setPassword($c['settings']['mail']['password']);
-    $mailer = Swift_Mailer::newInstance($transport);
+    $mailer = \Swift_Mailer::newInstance($transport);
     return $mailer;
 };
 
