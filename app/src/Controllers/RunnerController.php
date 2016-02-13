@@ -31,11 +31,14 @@ final class RunnerController extends Controller
         if ($runner->validate($data)) {
             if ($runner->create($data)) {
 
+                $data['name'] = $data['first_name'] . ' ' . $data['last_name'];
+
                 // Envoi d'un mail de confirmation
+                $body = $this->view->fetch('mail/register.twig', ['runner' => $data]);
                 $message = \Swift_Message::newInstance('You were registered!')
-                    ->setFrom(['info@postrail.org' => 'Postrail'])
-                    ->setTo(['receiver@domain.org', 'other@domain.org' => 'A name'])
-                    ->setBody('Here is the message itself');                
+                    ->setFrom(['no-reply@postrail.org' => 'Postrail'])
+                    ->setTo([$data['email'] => $data['name']])
+                    ->setBody($body, 'text/html');                
                 $this->mailer->send($message);
 
                 // Retour à la liste des coureurs avec message

@@ -53,6 +53,5 @@ $container['App\Controllers\StaticController'] = function ($c) {
 };
 
 $container['App\Controllers\RunnerController'] = function ($c) {
-
     return new App\Controllers\RunnerController($c['view'], $c['router'], $c['flash'], $c['mailer']);
 };

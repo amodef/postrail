@@ -4,6 +4,7 @@ require __DIR__ . '/../env.php';
 
 return [
     'settings' => [
+        'displayErrorDetails' => $env['development'],
         'db' => [
             // Illuminate/database configuration
             'driver'    => $env['db_driver'],
