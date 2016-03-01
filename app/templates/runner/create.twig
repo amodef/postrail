@@ -1,36 +1,31 @@
 {% extends 'layout.twig' %}
 
-{% set title = 'Register' %}
+{% set title = 'Inscription' %}
 {% block title %}{{title}}{% endblock %}
 
 {% block content %}
 
-<div class="row"> 
-    <div class="col-md-6">
+<section>
+    
+    <h3 class="major">{{title}}</h3>
 
-        {% include 'message.twig' %}
+    <form action="{{ path_for('runner.store') }}" method="POST">        
+        <div class="row uniform">
 
-        <h1>{{title}}</h1>
-        <br>
-
-        <form method="POST" action="{{ path_for('runner.store') }}" class="form-horizontal">
-
-            <!-- Race -->
-            <div class="form-group">                
-                <div class="col-sm-12">
-                    <label for="race">The race you choose*</label>
-                    <select class="form-control" id="race" name="race">
-                        <option value="15 km">15 km</option>
-                        <option value="27 km">27 km</option>
+            <div class="6u$ 12u$(medium)">
+                <label for="race">Je participe*</label>
+                <div class="select-wrapper">
+                    <select name="race" id="race">
+                        <option value="15 km">à la course nature (15 km)</option>
+                        <option value="27 km">au mini trail (27 km)</option>
                     </select>
-                </div>
+                </div>                
             </div>
-
-            <!-- Meal -->
-            <div class="form-group">                
-                <div class="col-sm-12">
-                    <label for="meal">Number of evening meals*</label>
-                    <select class="form-control" id="meal" name="meal">
+               
+            <div class="6u$ 12u$(medium)">
+                <label for="meal">Nombre de repas du soir*</label>
+                <div class="select-wrapper">
+                    <select id="meal" name="meal">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -41,112 +36,87 @@
                 </div>
             </div>
 
-            <hr>
-
-            <!-- Name -->
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <label for="first_name">Name*</label>
-                </div>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First">
-                </div>
-                <div class="col-sm-6">    
-                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last">
-                </div>
+            <div class="3u 6u(medium)">
+                <label for="first_name">Prénom*</label>
+                <input type="text" name="first_name" id="first_name">
             </div>
 
-            <!-- Email -->
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <label for="email">Your email address*</label>
-                </div>
-                <div class="col-sm-12"> 
-                    <input type="text" class="form-control" id="email" name="email" placeholder="jean.dupont@yourdomain.be">
-                </div>
+            <div class="3u$ 6u$(medium)">
+                <label for="last_name">Nom*</label>
+                <input type="text" name="last_name" id="last_name">
             </div>
 
-            <!-- Gender -->
-            <div class="form-group">                
-                <div class="col-sm-12">
-                    <label for="gender">Gender*</label>
-                    <select class="form-control" id="gender" name="gender" required>
-                        <option disabled selected>I am...</option>
-                        <option value="0">Female</option>
-                        <option value="1">Male</option>
+            <div class="6u$ 12u$(medium)">
+                <label for="email">Votre adresse email*</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+
+            <div class="6u$ 12u$(medium)">
+                <label for="birthdate">Date de naissance*</label>
+            </div>
+            <div class="2u 4u(medium)">
+                <input type="text" name="day" id="day" placeholder="25" required>
+            </div>
+            <div class="2u 4u(medium)">
+                <div class="select-wrapper">
+                    <select name="month" id="month">
+                        <option>mois</option>
+                        <option value="1">Janvier</option>
+                        <option value="2">Février</option>
+                        <option value="3">Mars</option>
+                        <option value="4">Avril</option>
+                        <option value="5">Mai</option>
+                        <option value="6">Juin</option>
+                        <option value="7">Juillet</option>
+                        <option value="8">Août</option>
+                        <option value="9">Septembre</option>
+                        <option value="10">Octobre</option>
+                        <option value="11">Novembre</option>
+                        <option value="12">Décembre</option>
                     </select>
                 </div>
             </div>
+            <div class="2u$ 4u$(medium)">
+                <input type="text" name="year" id="year" placeholder="1985" required>
+            </div>
 
-            <!-- Birthday -->
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <label for="first_name">Birthday*</label>
-                </div>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" id="day" name="day" placeholder="Day">
-                </div>             
-                <div class="col-sm-5">
-                    <select class="form-control" id="month" name="month" required>
-                        <option disabled selected>Month</option>
-                        <option value="1">January</option>
-                        <option value="2">February</option>
-                        <option value="3">March</option>
-                        <option value="4">April</option>
-                        <option value="5">May</option>
-                        <option value="6">June</option>
-                        <option value="7">July</option>
-                        <option value="8">August</option>
-                        <option value="9">September</option>
-                        <option value="10">October</option>
-                        <option value="11">November</option>
-                        <option value="12">December</option>
+            <div class="6u$ 12u$(xsmall)">
+                <label for="gender">Sexe*</label>
+                <div class="select-wrapper">
+                    <select name="gender" id="gender">
+                        <option>Je suis...</option>
+                        <option value="0">une femme</option>
+                        <option value="1">un homme</option>
                     </select>
                 </div>
-                <div class="col-sm-4">    
-                    <input type="text" class="form-control" id="year" name="year" placeholder="Year">
-                </div>
             </div>
-
-            <hr>
-
-            <!-- Location -->
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <label for="city">Location</label>
-                </div>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="city" name="city" placeholder="City">
-                </div>
-                <div class="col-sm-6">    
-                    <input type="text" class="form-control" id="country" name="country" placeholder="Country">
-                </div>
-            </div>
-
-            <!-- Team -->
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <label for="team">Your team</label>
-                </div>
-                <div class="col-sm-12"> 
-                    <input type="text" class="form-control" id="team" name="team" placeholder="Cool Team Name">
-                </div>
-            </div>
-
-
-
             
+            <div class="6u$ 6u$(xsmall)">
+                <label for="team">Équipe</label>
+                <input type="text" name="team" id="team">
+            </div>
+            
+            <div class="6u$ 6u$(xsmall)">
+                <label for="team">Ville</label>
+                <input type="text" name="city" id="city">
+            </div>
+            
+            <div class="6u$ 6u$(xsmall)">
+                <label for="team">Pays</label>
+                <input type="text" name="country" id="country">
+            </div>
 
+            <div class="12u$">
+                <button type="submit" class="button special">
+                    S'inscrire
+                </button>
+                <a href="{{ path_for('runner.index') }}" class="button">
+                    Back
+                </a>
+            </div>
+        </div>
+    </form>
 
-            <input type="hidden" name="csrf_name" value="{{ csrf['name'] }}">
-            <input type="hidden" name="csrf_value" value="{{ csrf['value'] }}">
-
-            <br>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <a class="btn btn-default" href="{{ path_for('runner.index') }}">Cancel</a>
-        </form>
-    </div>
-</div>
+</section>
 
 {% endblock %}

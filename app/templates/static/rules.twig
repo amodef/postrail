@@ -1,11 +1,109 @@
 {% extends 'layout.twig' %}
 
-{% set title = 'Rules' %}
+{% set title = 'Règlement de l\'épreuve' %}
 {% block title %}{{title}}{% endblock %}
 
 {% block content %}
-<h1>{{title}}</h1>
 
-<p>Le règlement de l'épreuve.</p>
+<h3 class="major">{{title}}</h3>
+
+<h4>Article 1<sup>er</sup> - Description de l'épreuve</h4>
+<p>Le "Postrail" est une compétition sportive de course à pied hors stade comportant deux parcours distincts, à savoir&nbsp;:
+<ul>
+    <li>Course nature d'environ <strong>15 km</strong></li>
+    <li>Trail découverte d'environ <strong>27 km</strong></li>
+</ul>
+Ces parcours sont réalisés en semi-autonomie (un ravitaillement pour la course nature, deux pour le trail découverte).
+La compétition a lieu le samedi 23 juillet 2016 à Post (Attert, Belgique).</p>
+
+<h4>Article 2 - Acceptation du présent règlement</h4>
+<p>Par le seul fait de s'inscrire à l'épreuve, le coureur reconnaît avoir pris connaissance du présent règlement et marquer son accord sur celui-ci.</p>
+
+<h4>Article 3 - Inscriptions à l'épreuve</h4>
+<p>Le coureur doit s'inscrire à l'épreuve à l'aide du portail de Chronorace (www.chronorace.be).<br>
+Aucun autre moyen d'inscription n'est possible.</p>
+<p>Les inscriptions seront clôturées une semaine avant le jour de l'épreuve. Ne pourront être considérés comme inscrits que les coureurs en ordre de paiement au moment de la clôture des inscriptions.<br>
+L'organisation se réserve le droit de clôturer anticipativement les inscriptions.</p>
+<p>En cas d'annulation, toute demande de remboursement doit nous parvenir avant le 1er juillet. Les demandes d'annulation sont obligatoirement adressées à l'organisation par mail, via le formulaire de contact présent sur notre site internet.<br>
+Afin que nous puissions donner suite à votre demande, nous vous demandons de nous fournir votre nom ainsi que votre numéro de compte IBAN.</p>
+
+<h4>Article 4 - Décharge de responsabilité</h4>
+<p>Tous les coureurs sont conscients, avant de prendre le départ, qu’ils participent à l'épreuve à leurs propres risques et périls.
+À ce titre, ils se rendent responsables de tous dommages causés à eux-mêmes ou à des tiers.</p>
+<p>Chaque coureur déclare se trouver en bonne santé et avoir une condition physique lui permettant de participer sans risques particuliers au parcours choisi.</p>
+
+
+<h4>Article 5 - Sécurité et entraide</h4>
+<p>Tout participant se doit de porter secours et assistance à un tiers qui serait en difficulté durant l'épreuve, et ce jusqu'à ce que celui-ci soit en état de reprendre la course, ou soit pris en charge par l'organisation. En outre, il s'engage à obéir aux indications des organisateurs et des personnes postées sur le parcours.</p>
+<p>Les signaleurs s'efforcent de garantir la sécurité des participants sur le parcours. Il est toutefois rappelé à chacun que le code de la route reste d'application, et que la plus grande prudence doit être réservée aux lieux de traversée de la route régionale, les coureurs n'ayant aucune priorité particulière lors de l'épreuve.</p>
+
+<h4>Article 6 - Respect de l'environnement</h4>
+<p>Il est demandé aux coureurs de respecter la cadre naturel dans lequel ils évoluent. Aucun détritus ne pourra être abandonné sur le parcours. Tout coureur surpris à jeter ses ordures dans la nature sera automatiquement disqualifié.</p>
+<p><strong>Afin de limiter au maximum les déchets générés, les points de ravitaillement sont pourvus de bidons munis d'un robinet. Chaque participant doit donc emporter avec lui une gourde ou un gobelet avec possibilité de remplissage en cours de route.</strong></p>
+
+<h4>Article 7 - Matériel à emporter</h4>
+<table class="alt">
+    <thead>
+        <th>Description</th>
+        <th>15 km</th>
+        <th>27 km</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Un GSM chargé et en bon état de fonctionnement</td>
+            <td>o</td>
+            <td>o</td>
+        </tr>
+        <tr>
+            <td>Un récipient facile à remplir à utiliser lors des ravitaillements</td>
+            <td>o</td>
+            <td>o</td>
+        </tr>
+        <tr>                                    
+            <td>Une réserve d'eau de 500 ml minimum</td>
+            <td>c</td>
+            <td>o</td>
+        </tr>
+        <tr>                                    
+            <td>Des barres ou gels énergétiques</td>
+            <td>c</td>
+            <td>o</td>
+        </tr>
+        <tr>                                    
+            <td>Un sifflet de survie</td>
+            <td>c</td>
+            <td>c</td>
+        </tr>
+        <tr>                                    
+            <td>Une veste de pluie imperméable et respirante</td>
+            <td>c</td>
+            <td>c</td>
+        </tr>                               
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">o - obligatoire | c - conseillé | <b>aucun gobelet jetable n'est proposé lors des ravitaillements</b><br>
+            Le matériel des coureurs ne sera pas vérifié systématiquement au départ, mais des coups de sonde pourront être réalisés en cas de doute.</td>
+        </tr>
+    </tfoot>
+</table>
+
+<h4>Article 8 - Aide extérieure et suivi du parcours</h4>
+<p>Il est interdit à tout participant de faire appel ou de bénéficier d'une quelconque aide extérieure durant le déroulement de l'épreuve.<br>
+Par aide extérieure, nous entendons&nbsp;:
+<ul>
+    <li>ravitaillement sauvage&nbsp;;</li>
+    <li>accompagnant extérieur&nbsp;;</li>
+    <li>assistance extérieure.</li>
+</ul>
+Il va sans dire qu'il est également interdit de prendre des raccourcis ou de s'éloigner de l'itinéraire balisé.</p>
+
+<h4>Article 9 - Fin de l'épreuve et abandon</h4>
+<p>Il est demandé à chaque coureur de prévenir l'organisation de tout abandon en cours de route.<br>
+L'épreuve est clôturée au bout d'un temps permettant à chacun de réaliser le parcours à son rythme, par le passage de "vélos balais". Toute personne désireuse de rester sur le parcours après le passage des vélos balais sera considérée comme hors course, et ne pourra plus bénéficier de l'encadrement offert par l'organisation.</p>
+
+<h4>Article 10 - Sanctions</h4>
+<p>En cas de non respect du présent règlement, l'organisation se réserve le droit d'appliquer des pénalités, pouvant aller jusqu'à la disqualification.</p>
+<p><strong>De manière générale, nous souhaitons que cette compétition se déroule dans un esprit bon enfant, fait de rencontres et de découvertes du patrimoine naturel local, du dépassement de soi et non de l'autre. Le fair-play et la bonne humeur doivent primer sur le reste.</strong></p>                        
 
 {% endblock %}

@@ -1,0 +1,9 @@
+{
+  "name": "postrail",
+  "description": "This is the [Postrail's website](http://www.postrail.org) repository.",
+  "scripts": {
+    "css": "node-sass assets/sass/main.scss public/css/main.css",    
+    "css:ie9": "node-sass assets/sass/ie9.scss public/css/ie9.css",
+    "css:watch": "npm run css -- -w"
+  }
+}

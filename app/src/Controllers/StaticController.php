@@ -16,4 +16,9 @@ final class StaticController extends Controller
         return $this->view->render($response, 'static/rules.twig');
     }
 
+    public function about($request, $response)
+    {
+        return $this->view->render($response, 'static/about.twig');
+    }
+
 }

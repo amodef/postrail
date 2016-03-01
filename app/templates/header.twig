@@ -1,0 +1,20 @@
+<header id="header">
+    <h1><a href="{{ path_for('home')}}">Postrail</a></h1>
+    <nav>
+        <a href="#menu">Menu</a>
+    </nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+    <div class="inner">
+        <h2>Menu</h2>
+        <ul class="links">
+            <li><a href="{{ path_for('home')}}">Accueil</a></li>
+            <li><a href="{{ path_for('runner.index')}}">Inscriptions</a></li>
+            <li><a href="{{ path_for('rules')}}">Règlement</a></li>
+            <li><a href="{{ path_for('about')}}">À propos</a></li>
+        </ul>
+        <a href="#" class="close">Close</a>
+    </div>
+</nav>
