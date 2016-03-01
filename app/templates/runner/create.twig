@@ -80,7 +80,7 @@
                 <input type="text" name="year" id="year" placeholder="1985" required>
             </div>
 
-            <div class="6u$ 12u$(xsmall)">
+            <div class="6u$ 12u$(medium)">
                 <label for="gender">Sexe*</label>
                 <div class="select-wrapper">
                     <select name="gender" id="gender">
@@ -91,28 +91,34 @@
                 </div>
             </div>
             
-            <div class="6u$ 6u$(xsmall)">
+            <div class="6u$ 12u$(medium)">
                 <label for="team">Équipe</label>
                 <input type="text" name="team" id="team">
             </div>
             
-            <div class="6u$ 6u$(xsmall)">
+            <div class="6u$ 12u$(medium)">
                 <label for="team">Ville</label>
                 <input type="text" name="city" id="city">
             </div>
             
-            <div class="6u$ 6u$(xsmall)">
+            <div class="6u$ 12u$(medium)">
                 <label for="team">Pays</label>
                 <input type="text" name="country" id="country">
             </div>
 
-            <div class="12u$">
-                <button type="submit" class="button special">
-                    S'inscrire
-                </button>
-                <a href="{{ path_for('runner.index') }}" class="button">
-                    Back
-                </a>
+            <div class="6u$ 12u$(medium)">
+                <ul class="actions fit">
+                    <li>
+                        <button type="submit" class="button special fit">
+                            S'inscrire
+                        </button>
+                    </li>
+                    <li>
+                        <a href="{{ path_for('runner.index') }}" class="button fit">
+                            Back
+                        </a>
+                    </li>                    
+                </ul>
             </div>
         </div>
     </form>
