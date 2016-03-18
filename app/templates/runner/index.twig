@@ -4,42 +4,18 @@
 {% block title %}{{title}}{% endblock %}
 
 {% block content %}
-
+ 
 {% include 'message.twig' %}
 
 <section>
     <ul class="actions">
         <li>
-            <a href="{{ path_for('runner.create')}}" class="button special">Inscrivez-vous&nbsp;!</a>       
+            <a href="http://www.njuko.net/postrail2016" class="button special">Inscrivez-vous&nbsp;!</a>       
         </li>
     </ul>
-</section>
 
-<section>    
-    <h3 class="major">{{title}}</h3>
-    <table class="sortable">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Gender</th>
-                <th>Race</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for runner in runners %}
-            <tr>
-                <td>{{ runner['id'] }}</td>
-                <td>
-                    <a href="/runner/{{ runner['id'] }}">
-                        {{ runner['first_name'] }} {{ runner['last_name'] }}
-                    </a>
-                </td>
-                <td>{% if runner['gender'] %}male{% else %}female{% endif %}</td>
-                <td>{{ runner['race'] }}</td> 
-            </tr>
-            {% endfor %}
-        </tbody>    
-    </table>
+    <p>Par son inscription, chaque participant cerifie avoir lu le réglement de la course et marquer son accord sur celui-ci. Le nombre de participants est limités à 300 personnes pour chacune des deux distances. Pour des raisons d'organisation, les inscriptions ne sont possibles qu'en ligne, et seront cloturées le 15 juillet 2016 à 23h59.</p>
+
+    <p><a href="http://www.njuko.net/postrail2016/registrations-list-v3">Consulter la liste des inscrits.</a></p>
 </section>
 {% endblock %}
