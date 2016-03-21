@@ -33,7 +33,8 @@ final class StaticController extends Controller
             // Envoi du mail de contact
             $body = $this->view->fetch('mail/contact.twig', ['contact' => $data]);
             $message = \Swift_Message::newInstance('Message en provenance de www.postrail.org')
-                ->setFrom([$data['email'] => $data['name']])
+                ->setFrom(['no-reply@postrail.org' => 'Postrail\'s website'])
+                ->setReplyTo([$data['email'] => $data['name']])
                 ->setTo(['info@postrail.org' => 'Postrail'])
                 ->setBody($body, 'text/html');                
             $this->mailer->send($message);
