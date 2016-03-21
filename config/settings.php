@@ -31,6 +31,7 @@ return [
             'password'   => $env['mail_password'],
             'encryption' => $env['mail_encryption'],
         ],
+        'recaptcha'         => $env['recaptcha'],
     ],
     'paths' => [
         // Phinx migrations path

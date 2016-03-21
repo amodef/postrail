@@ -24,6 +24,7 @@
         "slim/csrf": "^0.3.3",
         "slim/flash": "^0.1.0",
         "nesbot/carbon": "^1.21",
-        "swiftmailer/swiftmailer": "^5.4"
+        "swiftmailer/swiftmailer": "^5.4",
+        "google/recaptcha": "~1.1"
     }
 }

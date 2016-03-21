@@ -12,9 +12,13 @@
 {% endblock %}
 
 {% block footer %}
-    <h2 class="major">Nous contacter</h2>
+    <h2 class="major" id="contact">Nous contacter</h2>
+
+    {% include 'message.twig' %}
+
     <p>Pour toute question, remarque ou suggestion, n'hésitez pas à prendre contact avec nous via le formulaire ci-joint.</p>
-    <form method="post" action="#">
+
+    <form action="{{ path_for('about.contact') }}" method="POST">
         <div class="field">
             <label for="name">Name</label>
             <input type="text" name="name" id="name" />
@@ -27,6 +31,7 @@
             <label for="message">Message</label>
             <textarea name="message" id="message" rows="4"></textarea>
         </div>
+        <div class="field g-recaptcha" data-sitekey="6LeaUBsTAAAAAOfCQ_MMC1xjtKQ6w_TTn6LsCaxH"></div>
         <ul class="actions">
             <li><input type="submit" value="Send Message" /></li>
         </ul>
@@ -39,4 +44,8 @@
         </li>
     </ul>                    
     {{ parent() }}
+{% endblock %}
+
+{% block script %}
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 {% endblock %}

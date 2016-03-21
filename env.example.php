@@ -17,4 +17,6 @@ $env = [
     'mail_username' => 'user',
     'mail_password' => 'secret',
     'mail_encryption' => 'ssl',
+
+    'recaptcha' => '',
 ];

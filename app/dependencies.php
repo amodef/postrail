@@ -47,9 +47,15 @@ $container['mailer'] = function ($c) {
     return $mailer;
 };
 
+// reCaptcha
+$container['recaptcha'] = function ($c) {
+    $recaptcha = new \ReCaptcha\ReCaptcha($c['settings']['recaptcha']);;
+    return $recaptcha;
+};
+
 // Container and route binder
 $container['App\Controllers\StaticController'] = function ($c) {
-    return new App\Controllers\StaticController($c['view'], $c['router'], $c['flash']);
+    return new App\Controllers\StaticController($c['view'], $c['router'], $c['flash'], $c['mailer'], $c['recaptcha']);
 };
 
 $container['App\Controllers\RunnerController'] = function ($c) {

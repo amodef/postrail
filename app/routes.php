@@ -4,6 +4,7 @@
 $app->get('/', 'App\Controllers\StaticController:home')->setName('home');
 $app->get('/rules', 'App\Controllers\StaticController:rules')->setName('rules');
 $app->get('/about', 'App\Controllers\StaticController:about')->setName('about');
+$app->post('/about', 'App\Controllers\StaticController:contact')->setName('about.contact');
 
 // runner routes
 $app->get('/runner', 'App\Controllers\RunnerController:index')->setName('runner.index');
