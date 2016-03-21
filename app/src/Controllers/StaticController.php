@@ -35,7 +35,7 @@ final class StaticController extends Controller
             $message = \Swift_Message::newInstance('Message en provenance de www.postrail.org')
                 ->setFrom(['no-reply@postrail.org' => 'Postrail\'s website'])
                 ->setReplyTo([$data['email'] => $data['name']])
-                ->setTo(['info@postrail.org' => 'Postrail'])
+                ->setTo(['info@postrail.org' => 'Postrail\'s team'])
                 ->setBody($body, 'text/html');                
             $this->mailer->send($message);
 
