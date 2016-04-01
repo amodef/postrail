@@ -6,14 +6,34 @@
 -->
 <html lang="fr">
 	<head>
-		<title>Postrail 2016 | {% block title %}{% endblock %}</title>
+		<title>Postrail | samedi 23 juillet 2016{% block title %}{% endblock %}</title>
+
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<meta name="description" content="Trail de 16 et 27 km dans la vallée de l'Attert et la forêt d'Anlier">
+		<meta name="keywords" content="Postrail, Post, trail running, course à pied, course nature, forêt d'Anlier, vallée de l'Attert, Attert, 23 juillet">
+		<meta name="robots" content="index,follow">
+
+		<meta property="og:url" content="http://www.postrail.org">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Postrail | samedi 23 juillet 2016">
+		<meta property="og:description" content="Trail de 16 et 27 km dans la vallée de l'Attert et la forêt d'Anlier">
+		<meta property="og:image" content="http://www.postrail.org/img/bg.jpg">
 
 		<link rel="stylesheet" href="{{ base_url() }}/css/main.css">
 		<!--[if lte IE 9]><link rel="stylesheet" href="{{ base_url() }}/css/ie9.css" /><![endif]-->
 	</head>
 	<body>
+
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
 
 		<!-- Page Wrapper -->
 		<div id="page-wrapper">
@@ -27,6 +47,7 @@
 					<div class="inner">
 						<h2>Postrail</h2>
 						<p>Samedi 23 juillet 2016</p>
+						<div class="fb-like" data-href="http://www.postrail.org" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
 					</div>
 				</header>
 
